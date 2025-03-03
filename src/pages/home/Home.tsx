@@ -1,14 +1,25 @@
 import { useState } from "react";
 import { CalendarCheck } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
   const categorias = [
-    { nome: "YOGA", imagem: "/img/yoga.jpg" },
-    { nome: "FITNESS", imagem: "/img/musculacao.jpg" },
-    { nome: "CARDIO", imagem: "/img/cardio.jpg" },
-    { nome: "TREINO ESPECIAL", imagem: "/img/especial.jpg" },
-    { nome: "ABDOMINAL", imagem: "/img/abdomen.jpg" },
-    { nome: "AUTOIMPACTO", imagem: "/img/autoimpacto.jpg" },
+    { nome: "YOGA", imagem: "/img/yoga.jpg", rota: "/yoga" },
+    { nome: "FITNESS", imagem: "/img/musculacao.jpg", rota: "/fitness" },
+    { nome: "CARDIO", imagem: "/img/cardio.jpg", rota: "/cardio" },
+    {
+      nome: "TREINO ESPECIAL",
+      imagem: "/img/especial.jpg",
+      rota: "/treinoespecial",
+    },
+    { nome: "ABDOMINAL", imagem: "/img/abdomen.jpg", rota: "/abdominal" },
+    {
+      nome: "AUTOIMPACTO",
+      imagem: "/img/autoimpacto.jpg",
+      rota: "/autoimpacto",
+    },
   ];
 
   const diasSemana = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
@@ -91,7 +102,8 @@ function Home() {
           {categorias.map((categoria, index) => (
             <div
               key={index}
-              className="relative group overflow-hidden rounded-lg"
+              className="relative group overflow-hidden rounded-lg cursor-pointer"
+              onClick={() => categoria.rota && navigate(categoria.rota)}
             >
               <img
                 src={categoria.imagem}
