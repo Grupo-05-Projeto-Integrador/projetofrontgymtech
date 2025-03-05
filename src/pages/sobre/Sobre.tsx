@@ -14,35 +14,35 @@ export default function Sobre() {
     {
       id: 1,
       nome: "Arkimedes",
-      cargo: "Desenvolvedor Full Stack",
+      cargo: "Desenvolvedor Backend",
       img: Arkimedes,
-      qrData: "www.linkedin.com/in/yasmin-da-silva-pontes-011201165",
+      qrData: "https://www.linkedin.com/in/arkimedes-junior/",
     },
     {
       id: 2,
-      nome: "Francisco",
-      cargo: "UX/UI Designer",
+      nome: " Francisco",
+      cargo: "PO, Desenvolvedor Backend",
       img: Francisco,
-      qrData: "www.linkedin.com/in/yasmin-da-silva-pontes-011201165",
+      qrData: "https://www.linkedin.com/in/wandsonslopes/",
     },
     {
       id: 3,
       nome: "Rebeka",
-      cargo: "Gerente de Projetos",
+      cargo: "Gerente de Projetos, Desenvolvedor FullStack",
       img: Rebeka,
-      qrData: "www.linkedin.com/in/yasmin-da-silva-pontes-011201165",
+      qrData: "https://www.linkedin.com/in/rebeka-lima/",
     },
     {
       id: 4,
       nome: "Lucas",
-      cargo: "Desenvolvedor Mobile",
+      cargo: "Desenvolvedor FullStack",
       img: Lucas,
-      qrData: "www.linkedin.com/in/yasmin-da-silva-pontes-011201165",
+      qrData: "https://www.linkedin.com/in/lucas-vieira-966317262/",
     },
     {
       id: 5,
       nome: "Yasmin",
-      cargo: "QA Tester",
+      cargo: "Desenvolvedor FullStack",
       img: Yasmim,
       qrData: "www.linkedin.com/in/yasmin-da-silva-pontes-011201165",
     },
@@ -116,7 +116,6 @@ export default function Sobre() {
         </div>
       </div>
 
-      {/* Seção de Equipe com Carrossel */}
       <div className="container mx-auto p-6">
         <h2 className="text-2xl font-bold text-center mb-6">Nossa Equipe</h2>
         <Slider {...settings}>
