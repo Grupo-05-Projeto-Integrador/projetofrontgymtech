@@ -78,11 +78,11 @@ function Perfil() {
             <p className="font-semibold text-lg m-5">IMC</p>
 
             <div className="flex space-x-4 mb-4">
-              <p> Peso (kg):{usuario.peso}</p>
+              <p> Peso (kg): {usuario.peso}</p>
             </div>
 
             <div className="flex flex-col items-center">
-              <p> Altura (kg):{usuario.altura ? usuario.altura.toFixed(2): "N/A"}</p>
+              <p> Altura (kg): {usuario.altura ? usuario.altura.toFixed(2): "N/A"}</p>
             </div>
 
             <div className="bg-[#1b1f3e] p-3 rounded-md w-50 mt-4 text-center hover:bg-[#090d28]">
