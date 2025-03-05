@@ -34,7 +34,7 @@ function Login() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-[#090d28]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-[#1b1f3e]">
         <div className="flex justify-center items-center">
           <div className="bg-gray-800 p-8 rounded-2xl shadow-lg w-96">
             <h2 className="text-white text-3xl text-center mb-6">Entrar</h2>

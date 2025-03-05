@@ -1,6 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useContext } from "react";
 
 function Navbar() {
+  const navigate = useNavigate();
+
+  const { handleLogout } = useContext(AuthContext);
+
+  function logout() {
+    handleLogout();
+    alert("O Usuário foi desconectado com sucesso!");
+    navigate("/");
+  }
+
   return (
     <>
       <div className="w-full flex justify-center py-4 bg-[#090D28] text-white box-border max-h-18">
@@ -34,6 +46,13 @@ function Navbar() {
               <p className="font-montserrat text-base hover:text-[#ea337b]">
                 PERFIL
               </p>
+            </Link>
+            <Link
+              to=""
+              onClick={logout}
+              className="font-montserrat text-base hover:text-[#ea337b]"
+            >
+              SAIR
             </Link>
           </div>
         </div>

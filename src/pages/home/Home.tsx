@@ -55,7 +55,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Check-in abaixo do banner */}
+      {/* Check-in */}
       <div className="container mx-auto py-8 flex flex-col items-center">
         <h3 className="text-2xl font-bold mb-6 text-center">
           Registre seu Check-in 📅
