@@ -59,6 +59,11 @@ function Navbar() {
                 SAIR
               </Link>
             </div>
+            <Link to="/cadastrarcategoria">
+              <p className="font-montserrat text-base hover:text-[#ea337b]">
+                CADASTRAR CATEGORIA
+              </p>
+            </Link>
           </div>
         </div>
       </>

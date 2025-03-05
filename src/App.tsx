@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/footer/Footer";
-import Navbar from "./components/navbar/NavBar";
+import NavBar from "./components/navbar/NavBar";
 import Home from "./pages/home/Home";
 import "./App.css";
 import Sobre from "./pages/sobre/Sobre";
+
 import Yoga from "./pages/treinos/Yoga";
 import Fitness from "./pages/treinos/Fitness";
 import Autoimpacto from "./pages/treinos/AutoImpacto";
@@ -15,13 +16,15 @@ import Login from "./components/login/Login";
 import Cadastro from "./components/cadastro/Cadastro";
 import Perfil from "./pages/perfil/Perfil";
 
+import FormCategoria from "./components/categoria/formcategoria/FormCategoria";
+import ListaCategoria from "./components/categoria/listacategoria/ListaCategoria";
 
 function App() {
   return (
     <>
       <AuthProvider>
         <BrowserRouter>
-          <Navbar />
+          <NavBar />
           <div className="min-h-80vh]">
             <Routes>
               <Route path="/" element={<Login />} />
@@ -29,6 +32,7 @@ function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/Sobre" element={<Sobre />} />
+
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/yoga" element={<Yoga />} />
               <Route path="/fitness" element={<Fitness />} />
@@ -36,6 +40,10 @@ function App() {
               <Route path="/cardio" element={<Cardio />} />
               <Route path="/abdominal" element={<Abdominal />} />
               <Route path="/treinoespecial" element={<TreinoEspecial />} />
+
+              <Route path="/categoria" element={<ListaCategoria />} />
+              <Route path="/cadastrarcategoria" element={<FormCategoria />} />
+              <Route path="/editarcategoria/:id" element={<FormCategoria />} />
             </Routes>
           </div>
           <Footer />
