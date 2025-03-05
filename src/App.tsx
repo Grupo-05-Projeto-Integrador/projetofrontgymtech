@@ -13,6 +13,8 @@ import TreinoEspecial from "./pages/treinos/TreinoEspecial";
 import { AuthProvider } from "./contexts/AuthContext";
 import Login from "./components/login/Login";
 import Cadastro from "./components/cadastro/Cadastro";
+import Perfil from "./pages/perfil/Perfil";
+
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/Sobre" element={<Sobre />} />
+              <Route path="/perfil" element={<Perfil />} />
               <Route path="/yoga" element={<Yoga />} />
               <Route path="/fitness" element={<Fitness />} />
               <Route path="/autoimpacto" element={<Autoimpacto />} />
