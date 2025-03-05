@@ -10,27 +10,42 @@ import Autoimpacto from "./pages/treinos/AutoImpacto";
 import Cardio from "./pages/treinos/Cardio";
 import Abdominal from "./pages/treinos/Abdominal";
 import TreinoEspecial from "./pages/treinos/TreinoEspecial";
+import { AuthProvider } from "./contexts/AuthContext";
+import Login from "./components/login/Login";
+import Cadastro from "./components/cadastro/Cadastro";
+
+
+
+
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <div className="min-h-[80vh]">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/Sobre" element={<Sobre />} />
-            <Route path="/yoga" element={<Yoga />} />
+
+
+      <AuthProvider>
+        <BrowserRouter>
+          <Navbar />
+          <div className="min-h-80vh]">
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/Sobre" element={<Sobre />} />
+              <Route path="/yoga" element={<Yoga />} />
             <Route path="/fitness" element={<Fitness />} />
             <Route path="/autoimpacto" element={<Autoimpacto />} />
             <Route path="/cardio" element={<Cardio />} />
             <Route path="/abdominal" element={<Abdominal />} />
             <Route path="/treinoespecial" element={<TreinoEspecial />} />
-          </Routes>
-        </div>
-        <Footer />
-      </BrowserRouter>
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
+      </AuthProvider>
+
     </>
   );
 }
