@@ -30,14 +30,10 @@ function Navbar() {
                 CATEGORIAS
               </p>
             </Link>
-            <Link to="/usuarios/all">
-              <p className="font-montserrat text-base hover:text-[#ea337b]">
-                PERFIL
-              </p>
-            </Link>
+            <Link to='/perfil' className="font-montserrat text-base hover:text-[#ea337b]">PERFIL</Link>
+          </div>
           </div>
         </div>
-      </div>
     </>
   );
 }
