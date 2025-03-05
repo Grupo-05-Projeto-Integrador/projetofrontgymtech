@@ -1,6 +1,5 @@
 import {
-  FacebookLogo,
-  InstagramLogo,
+  GithubLogo,
   LinkedinLogo,
 } from "@phosphor-icons/react";
 
@@ -40,16 +39,10 @@ function Footer() {
           <h3 className="font-bold text-xl mb-2">Social Media Link</h3>
           <div className="flex gap-4 mt-2">
             <a
-              href="#"
+              href="https://github.com/Grupo-05-Projeto-Integrador"
               className="hover:text-pink-500 transition-colors duration-300"
             >
-              <FacebookLogo size={30} weight="bold" />
-            </a>
-            <a
-              href="#"
-              className="hover:text-pink-500 transition-colors duration-300"
-            >
-              <InstagramLogo size={30} weight="bold" />
+              <GithubLogo size={30} weight="bold" />
             </a>
             <a
               href="#"
