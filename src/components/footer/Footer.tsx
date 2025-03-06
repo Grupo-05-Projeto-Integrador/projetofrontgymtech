@@ -1,7 +1,4 @@
-import {
-  GithubLogo,
-  LinkedinLogo,
-} from "@phosphor-icons/react";
+import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
 
 function Footer() {
   let data = new Date().getFullYear();
@@ -21,13 +18,17 @@ function Footer() {
           <div className="flex flex-col items-center">
             <h3 className="font-bold text-xl mb-2">Compania</h3>
             <a
-              href="#"
+              href="/Sobre"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-pink-500 transition-colors duration-300"
             >
               Sobre nós
             </a>
             <a
-              href="#"
+              href="https://linktr.ee/linkedingrupo"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-pink-500 transition-colors duration-300"
             >
               Contatos
@@ -40,12 +41,16 @@ function Footer() {
           <div className="flex gap-4 mt-2">
             <a
               href="https://github.com/Grupo-05-Projeto-Integrador"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-pink-500 transition-colors duration-300"
             >
               <GithubLogo size={30} weight="bold" />
             </a>
             <a
-              href="#"
+              href="https://linktr.ee/linkedingrupo"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-pink-500 transition-colors duration-300"
             >
               <LinkedinLogo size={30} weight="bold" />
