@@ -7,39 +7,38 @@ import CardCategorias from "../cardcategorias/CardCategorias";
 import { buscar } from "../../../service/Service";
 
 function ListaCategorias() {
-
     const navigate = useNavigate();
 
-    const [categorias, setCategorias] = useState<Categoria[]>([])
+    const [categorias, setCategorias] = useState<Categoria[]>([]);
 
-    const { aluno, handleLogout } = useContext(AuthContext)
-    const token = aluno.token
+    const { aluno, handleLogout } = useContext(AuthContext);
+    const token = aluno.token;
 
     async function buscarCategorias() {
         try {
-            await buscar('categorias', setCategorias, {
-                headers: { Authorization: token }
-            })
+            await buscar("categorias", setCategorias, {
+                headers: { Authorization: token },
+            });
         } catch (error: any) {
-            if (error.toString().includes('403')) {
-                handleLogout()
+            if (error.toString().includes("403")) {
+                handleLogout();
             }
         }
     }
 
     useEffect(() => {
-        if (token === '') {
-            alert('Você precisa estar logado!')
-            navigate('/')
+        if (token === "") {
+            alert("Você precisa estar logado!");
+            navigate("/");
         }
-    }, [token])
+    }, [token]);
 
     useEffect(() => {
-        buscarCategorias()
-    }, [categorias.length])
+        buscarCategorias();
+    }, [categorias.length]);
 
     return (
-        <>
+        <div className="flex flex-col items-center min-h-screen bg-[#0b0d21] text-white">
             {categorias.length === 0 && (
                 <DNA
                     visible={true}
@@ -50,29 +49,24 @@ function ListaCategorias() {
                     wrapperClass="dna-wrapper mx-auto"
                 />
             )}
-            <div className="flex justify-center w-full my-4">
-                <div className="container flex flex-col">
 
-                    <div className="flex justify-center mb-4">
-                        <button
-                            onClick={() => navigate('/cadastrarcategoria')}
-                            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-                        >
-                            Cadastrar Categoria
-                        </button>
-                    </div>
+            <div className="container flex flex-col items-center py-8">
+                <button
+                    onClick={() => navigate("/cadastrarcategoria")}
+                    className="bg-pink-600 text-white px-6 py-3 rounded-full 
+                               hover:bg-pink-700 transition-all shadow-lg mb-6"
+                >
+                    Cadastrar Categoria
+                </button>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {categorias.map((categoria) => (
-                            <CardCategorias key={categoria.id} categoria={categoria} />
-                        ))}
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full px-4">
+                    {categorias.map((categoria) => (
+                        <CardCategorias key={categoria.id} categoria={categoria} />
+                    ))}
                 </div>
             </div>
-
-
-        </>
-    )
+        </div>
+    );
 }
 
 export default ListaCategorias;

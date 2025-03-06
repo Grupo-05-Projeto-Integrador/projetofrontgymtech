@@ -7,6 +7,6 @@ export default interface Exercicio {
   repeticao: number;
   serie: number;
   descricao: string;
-  aluno: Aluno | null;
   categoria: Categoria | null;
+  aluno: Aluno | null;
 }
