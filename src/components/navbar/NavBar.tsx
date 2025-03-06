@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { ReactNode, useContext } from "react";
-import Perfil from "../../pages/perfil/Perfil";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -59,7 +58,6 @@ function Navbar() {
                 SAIR
               </Link>
             </div>
-
           </div>
         </div>
       </>
