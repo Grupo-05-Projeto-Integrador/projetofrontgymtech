@@ -1,25 +1,26 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-import Aluno from "../../models/Aluno"; 
+import Aluno from "../../models/Aluno";
 import { buscar } from "../../service/Service";
 
 function Perfil() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-	const { aluno } = useContext(AuthContext);
+  const { aluno } = useContext(AuthContext);
 
   const [usuario, setUsuario] = useState({} as Aluno);
 
-  async function buscaDadosUsuario(){
+  async function buscaDadosUsuario() {
     try {
       await buscar(`alunos/calcular-imc/${aluno.id}`, setUsuario, {
         headers: {
-          Authorization: aluno.token
-        }
+          Authorization: aluno.token,
+        },
       });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
-      alert("Erro")
+      alert("Erro");
     }
   }
 
@@ -34,21 +35,20 @@ function Perfil() {
   }
 
   useEffect(() => {
-    buscaDadosUsuario()
+    buscaDadosUsuario();
   }, [aluno.id]);
 
-	useEffect(() => {
-		if (aluno.token === "") {
-			alert("Você precisa estar logado")
-			navigate("/")
-		}
-	}, [aluno.token])
+  useEffect(() => {
+    if (aluno.token === "") {
+      alert("Você precisa estar logado");
+      navigate("/");
+    }
+  }, [aluno.token]);
 
-  console.log(usuario)
+  console.log(usuario);
 
   return (
     <div className="flex flex-col items-center bg-[#1b1f3e]">
-      
       <div className="w-full bg-[#ea377b] text-white py-4 text-center text-xl font-semibold hover:h-25">
         <p>Central do Aluno</p>
         <div className="text-sm m-2">
@@ -58,22 +58,19 @@ function Perfil() {
 
       <div className="container mx-auto my-8 p-4">
         <div className="flex gap-8 justify-center">
-          
           <div className="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-md w-1/2 m-4">
-            
             <img
               className="w-32 h-32 rounded-full border-4 border-white mb-4"
-              src="https://i.imgur.com/VpwApCU.png"
+              src={usuario.foto}
               alt={`Foto de perfil de ${usuario.nome}`}
             />
-            
+
             <div className="text-center text-lg text-gray-700">
               <p className="font-bold text-xl">{usuario.nome}</p>
               <p>{usuario.usuario}</p>
             </div>
           </div>
 
-         
           <div className="flex flex-col items-center bg-[#4b4e68] text-white p-6 rounded-lg shadow-md w-100 m-4">
             <p className="font-semibold text-lg m-5">IMC</p>
 
@@ -82,27 +79,27 @@ function Perfil() {
             </div>
 
             <div className="flex flex-col items-center">
-              <p> Altura (kg): {usuario.altura ? usuario.altura.toFixed(2): "N/A"}</p>
-            </div>
-
-            <div className="bg-[#1b1f3e] p-3 rounded-md w-50 mt-4 text-center hover:bg-[#090d28]">
-            <p className="text-bold">IMC: { usuario.imc ? usuario.imc.toFixed(2): "N/A"}</p>
-            </div>
-
-            <p className="font-bold mt-2">
-                Classificação: {usuario.imc ? classificarIMC(usuario.imc) : "N/A"}
+              <p>
+                {" "}
+                Altura (kg):{" "}
+                {usuario.altura ? usuario.altura.toFixed(2) : "N/A"}
               </p>
             </div>
 
-    </div>
-    </div>
+            <div className="bg-[#1b1f3e] p-3 rounded-md w-50 mt-4 text-center hover:bg-[#090d28]">
+              <p className="text-bold">
+                IMC: {usuario.imc ? usuario.imc.toFixed(2) : "N/A"}
+              </p>
+            </div>
+
+            <p className="font-bold mt-2">
+              Classificação: {usuario.imc ? classificarIMC(usuario.imc) : "N/A"}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default Perfil;
-
-
-
-
-{/* Paleta de cor // bg-[#1b1f3e] */}
