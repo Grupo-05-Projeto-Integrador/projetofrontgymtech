@@ -43,7 +43,7 @@ function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('src/assets/imagens/Banner Image.jpg')",
+            backgroundImage: "url(https://i.imgur.com/OgtI0bX.jpg)", // Alteração feita aqui
           }}
         ></div>
 

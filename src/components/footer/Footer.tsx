@@ -7,7 +7,11 @@ function Footer() {
     <div className="w-full h-[355px] bg-[#090D28] text-white flex justify-center items-center">
       <div className="max-w-[1440px] w-full flex justify-between items-center px-10">
         <div className="w-1/1 flex flex-col justify-center items-center text-center">
-          <img src="src/assets/LOGO3.png" alt="Gym Logo" className="h-40" />
+          <img
+            src="https://i.imgur.com/gZryJLB.jpg"
+            alt="Gym Logo"
+            className="h-40"
+          />
           <p className="text-sm max-w-sm text-center self-center">
             Bem-vindos ao GymTech, aqui te desafiamos a ser 1% melhor todos os
             dias, fazendo um treino ou um esporte e incentivando outras pessoas.

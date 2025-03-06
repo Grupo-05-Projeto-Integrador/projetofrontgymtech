@@ -21,7 +21,7 @@ function Navbar() {
         <div className="w-full flex justify-center py-4 bg-[#090D28] text-white box-border max-h-18">
           <div className="container flex justify-between items-center text-lg">
             <img
-              src="src/assets/LOGO3.png"
+              src="https://i.imgur.com/gZryJLB.png"
               className="max-h-24 w-auto pt-1"
               alt="Logo"
             />
