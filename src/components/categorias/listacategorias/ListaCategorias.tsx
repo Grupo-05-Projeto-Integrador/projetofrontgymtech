@@ -53,8 +53,8 @@ function ListaCategorias() {
       <div className="container flex flex-col items-center py-8">
         <button
           onClick={() => navigate("/cadastrarcategoria")}
-          className="bg-indigo-600 text-white px-6 py-3 rounded-full 
-                               hover:bg-indigo-800 transition-all shadow-lg mb-6"
+          className="bg-pink-600 text-white px-6 py-3 rounded-full 
+                               hover:bg-pink-700 transition-all shadow-lg mb-6"
         >
           Cadastrar Categoria
         </button>
