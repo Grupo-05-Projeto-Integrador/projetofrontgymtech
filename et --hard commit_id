@@ -1,0 +1,20 @@
+[33m39648c6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m)[m HEAD@{0}: checkout: moving from newdevelop to develop
+[33m30d0a7b[m[33m ([m[1;32mnewdevelop[m[33m)[m HEAD@{1}: commit: Atualização layout
+[33m39648c6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m)[m HEAD@{2}: checkout: moving from develop to newdevelop
+[33m39648c6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m)[m HEAD@{3}: commit: Atualização links no componente sobre
+[33mc43b974[m HEAD@{4}: commit: Correção NavBar + Token
+[33mef47377[m HEAD@{5}: commit: Componente sair
+[33m2ccf078[m HEAD@{6}: commit (merge): Atualização cards categorias
+[33mc7731e8[m HEAD@{7}: reset: moving to HEAD
+[33mc7731e8[m HEAD@{8}: commit: Cards categorias da Home
+[33mf341a54[m HEAD@{9}: checkout: moving from Developer to develop
+[33m239720d[m[33m ([m[1;31morigin/Developer[m[33m, [m[1;32mDeveloper[m[33m)[m HEAD@{10}: checkout: moving from develop to Developer
+[33mf341a54[m HEAD@{11}: rebase (abort): returning to refs/heads/develop
+[33mf341a54[m HEAD@{12}: rebase (abort): returning to refs/heads/develop
+[33m683351c[m HEAD@{13}: commit: Salvando as alterações antes do pull
+[33mf341a54[m HEAD@{14}: reset: moving to HEAD
+[33mf341a54[m HEAD@{15}: checkout: moving from Developer to develop
+[33m239720d[m[33m ([m[1;31morigin/Developer[m[33m, [m[1;32mDeveloper[m[33m)[m HEAD@{16}: checkout: moving from 239720d1aded182dbd28d597bd4487d9d772b4cc to Developer
+[33m239720d[m[33m ([m[1;31morigin/Developer[m[33m, [m[1;32mDeveloper[m[33m)[m HEAD@{17}: commit: Atualização
+[33m2e9d38a[m HEAD@{18}: pull origin develop --rebase (start): checkout 2e9d38a3953631fc5db8158f06e1283cb4329d5e
+[33mf341a54[m HEAD@{19}: commit (initial): Atualização Home
