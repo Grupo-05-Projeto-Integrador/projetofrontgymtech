@@ -1,8 +1,4 @@
-import {
-  FacebookLogo,
-  InstagramLogo,
-  LinkedinLogo,
-} from "@phosphor-icons/react";
+import { GithubLogo, Link, LinkedinLogo } from "@phosphor-icons/react";
 
 function Footer() {
   let data = new Date().getFullYear();
@@ -14,21 +10,22 @@ function Footer() {
           <img src="src/assets/LOGO3.png" alt="Gym Logo" className="h-40" />
           <p className="text-sm max-w-sm text-center self-center">
             Bem-vindos ao GymTech, aqui te desafiamos a ser 1% melhor todos os
-            dias, fazendo um treino ou um esporte e incentivando outras pessoas.
+            dias.
           </p>
         </div>
 
         <div className="w-1/2 flex justify-around text-sm">
           <div className="flex flex-col items-center">
             <h3 className="font-bold text-xl mb-2">Compania</h3>
+
             <a
-              href="#"
+              href="/Sobre"
               className="hover:text-pink-500 transition-colors duration-300"
             >
               Sobre nós
             </a>
             <a
-              href="#"
+              href="https://linktr.ee/linkedingrupo"
               className="hover:text-pink-500 transition-colors duration-300"
             >
               Contatos
@@ -40,19 +37,13 @@ function Footer() {
           <h3 className="font-bold text-xl mb-2">Social Media Link</h3>
           <div className="flex gap-4 mt-2">
             <a
-              href="#"
+              href="https://github.com/Grupo-05-Projeto-Integrador"
               className="hover:text-pink-500 transition-colors duration-300"
             >
-              <FacebookLogo size={30} weight="bold" />
+              <GithubLogo size={30} weight="bold" />
             </a>
             <a
-              href="#"
-              className="hover:text-pink-500 transition-colors duration-300"
-            >
-              <InstagramLogo size={30} weight="bold" />
-            </a>
-            <a
-              href="#"
+              href="https://linktr.ee/linkedingrupo"
               className="hover:text-pink-500 transition-colors duration-300"
             >
               <LinkedinLogo size={30} weight="bold" />

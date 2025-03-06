@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { ReactNode, useContext } from "react";
+import Perfil from "../../pages/perfil/Perfil";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -35,17 +36,17 @@ function Navbar() {
                   SOBRE
                 </p>
               </Link>
-              <Link to="/postagens">
+              <Link to="exercicios">
                 <p className="font-montserrat text-base hover:text-[#ea337b]">
                   EXERCICIOS
                 </p>
               </Link>
-              <Link to="/categoria">
+              <Link to="/categorias">
                 <p className="font-montserrat text-base hover:text-[#ea337b]">
                   CATEGORIAS
                 </p>
               </Link>
-              <Link to="/usuarios/all">
+              <Link to="/perfil">
                 <p className="font-montserrat text-base hover:text-[#ea337b]">
                   PERFIL
                 </p>

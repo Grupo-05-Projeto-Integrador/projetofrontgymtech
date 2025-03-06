@@ -48,7 +48,7 @@ function Home() {
         ></div>
 
         <div className="relative text-center z-10">
-          <h2 className="text-5xl font-bold">Se Desafie todos os dias!</h2>
+          <h2 className="text-5xl font-bold">Desafie-se todos os dias!</h2>
           <p className="text-xl">
             Treinos para te motivar a seguir uma vida mais saudável.
           </p>
