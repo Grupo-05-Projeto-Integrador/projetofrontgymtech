@@ -41,9 +41,10 @@ function Home() {
       {/* Banner */}
       <div className="relative w-full h-[500px] flex items-center justify-center">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center h-full"
           style={{
-            backgroundImage: "url(https://i.imgur.com/OgtI0bX.jpg)", // Alteração feita aqui
+            backgroundImage: `url("https://yasmin.sirv.com/Images/Banner%20Image.jpg")`,
+            backgroundColor: "#1b1f3e", // Fallback se a imagem não carregar
           }}
         ></div>
 
