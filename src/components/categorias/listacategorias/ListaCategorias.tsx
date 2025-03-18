@@ -18,14 +18,17 @@ function ListaCategorias() {
         headers: { Authorization: token },
       });
 
-      // Garante que a resposta seja atualizada corretamente
-      if (resposta) {
-        setCategorias([...resposta]);
+      // Verifica se a resposta é um array antes de definir o estado
+      if (Array.isArray(resposta)) {
+        setCategorias(resposta);
+      } else {
+        console.error("A resposta da API não é um array:", resposta);
       }
     } catch (error: any) {
       if (error.toString().includes("403")) {
         handleLogout();
       }
+      console.error("Erro ao buscar categorias:", error);
     }
   }
 
@@ -59,7 +62,7 @@ function ListaCategorias() {
           <strong>Cadastrar Categoria</strong>
         </button>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-10 w-full px-4">
+        <div className="grid grid-cols-1 gap-4 w-full px-4">
           {categorias.map((categoria) => (
             <CardCategorias key={categoria.id} categoria={categoria} />
           ))}
