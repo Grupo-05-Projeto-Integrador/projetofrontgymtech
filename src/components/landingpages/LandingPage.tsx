@@ -13,17 +13,29 @@ function PaginaEntrada() {
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
         <source src="/videos/treinos.mp4" type="video/mp4" />
-        Seu navegador não suporta vídeos em HTML5.
       </video>
 
-      {/* Sobreposição degradê rosa e azul com opacidade maior */}
-      <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-transparent to-blue-700 opacity-60"></div>
+      {/* Sobreposição degradê rosa e azul com opacidade mais forte */}
+      <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-transparent to-blue-700 opacity-80"></div>
 
       {/* Conteúdo principal */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center p-10">
-        <div className="bg-opacity-10 backdrop-blur-md p-8 rounded-xl border border-pink-500 shadow-lg shadow-pink-500/50">
-          <h1 className="text-5xl font-bold mb-6">Bem-vindo ao GymTech</h1>
-          <p className="text-lg mb-6">
+        {/* Caixa com efeito vidro e rosa mais forte */}
+        <div className="bg-pink-500/30 backdrop-blur-lg p-8 rounded-xl border border-pink-500 shadow-lg shadow-pink-600/60">
+          <h1
+            className="text-5xl font-bold mb-6 text-white"
+            style={{
+              textShadow: "3px 3px 12px rgba(255, 105, 180, 0.9)", // Sombra rosa vibrante
+            }}
+          >
+            Bem-vindo ao GymTech
+          </h1>
+          <p
+            className="text-lg mb-6 text-white"
+            style={{
+              textShadow: "2px 2px 10px rgba(255, 105, 180, 0.9)", // Sombra rosa mais sutil
+            }}
+          >
             O melhor lugar para transformar sua saúde e bem-estar!
           </p>
           <div className="flex gap-4">
