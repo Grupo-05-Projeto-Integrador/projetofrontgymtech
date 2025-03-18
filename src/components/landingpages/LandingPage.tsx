@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { FaPlay, FaInfoCircle } from "react-icons/fa";
-import treinoVideo from "../../assets/imagens/treinos.mp4";
 
 function PaginaEntrada() {
   return (
@@ -13,7 +12,7 @@ function PaginaEntrada() {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
-        <source src={treinoVideo} type="video/mp4" />
+        <source src="/videos/treinos.mp4" type="video/mp4" />
         Seu navegador não suporta vídeos em HTML5.
       </video>
 
