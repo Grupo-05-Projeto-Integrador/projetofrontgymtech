@@ -18,19 +18,18 @@ function Perfil() {
           Authorization: aluno.token,
         },
       });
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       alert("Erro");
     }
   }
 
   function classificarIMC(imc: number) {
-    if (imc < 18.5) return "Abaixo do peso";
-    if (imc >= 18.5 && imc < 24.9) return "Peso normal";
-    if (imc >= 25 && imc < 29.9) return "Sobrepeso";
-    if (imc >= 30 && imc < 34.9) return "Momento de agir";
-    if (imc >= 35 && imc < 39.9) return "Obesidade grau 2";
-    if (imc >= 40) return "Obesidade grau 3";
+    if (imc < 18.5) return "Leve abaixo do peso";
+    if (imc >= 18.5 && imc < 24.9) return "Peso equilibrado";
+    if (imc >= 25 && imc < 29.9) return "Acima do peso ideal";
+    if (imc >= 30 && imc < 34.9) return "Faixa de atenção ao peso";
+    if (imc >= 35 && imc < 39.9) return "Faixa de cuidado com o peso";
+    if (imc >= 40) return "Faixa de maior atenção ao peso";
     return "Indefinido";
   }
 
@@ -44,8 +43,6 @@ function Perfil() {
       navigate("/");
     }
   }, [aluno.token]);
-
-  console.log(usuario);
 
   return (
     <div className="flex flex-col items-center bg-[#1b1f3e]">
@@ -61,8 +58,8 @@ function Perfil() {
           <div className="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-md w-1/2 m-4">
             <img
               className="w-32 h-32 rounded-full border-4 border-white mb-4"
-              src={usuario.foto}
-              alt={`Foto de perfil de ${usuario.nome}`}
+              src={usuario.foto || "/images/profile_photo.png"}
+              alt={`Foto de perfil de ${usuario.nome || "Usuário"}`}
             />
 
             <div className="text-center text-lg text-gray-700">
@@ -80,9 +77,7 @@ function Perfil() {
 
             <div className="flex flex-col items-center">
               <p>
-                {" "}
-                Altura (kg):{" "}
-                {usuario.altura ? usuario.altura.toFixed(2) : "N/A"}
+                Altura (m): {usuario.altura ? usuario.altura.toFixed(2) : "N/A"}
               </p>
             </div>
 

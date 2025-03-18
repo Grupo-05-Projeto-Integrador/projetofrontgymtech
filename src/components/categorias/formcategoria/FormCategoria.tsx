@@ -17,10 +17,12 @@ function FormCategorias() {
 
   async function buscarPorId(id: string) {
     try {
+      console.log("Buscando categoria com ID:", id);
       await buscar(`/categorias/${id}`, setCategoria, {
         headers: { Authorization: token },
       });
     } catch (error: any) {
+      console.error("Erro ao buscar categoria:", error);
       if (error.toString().includes("403")) {
         handleLogout();
       }
@@ -28,7 +30,7 @@ function FormCategorias() {
   }
 
   useEffect(() => {
-    if (token === "") {
+    if (!token) {
       alert("Você precisa estar logado!");
       navigate("/");
     }
@@ -55,43 +57,49 @@ function FormCategorias() {
     e.preventDefault();
     setIsLoading(true);
 
-    if (id !== undefined) {
-      try {
-        await atualizar(`/categorias`, categoria, setCategoria, {
-          headers: { Authorization: token },
-        });
-        alert("A Categoria foi atualizada com sucesso!");
-      } catch (error: any) {
-        if (error.toString().includes("403")) {
-          handleLogout();
-        } else {
-          alert("Erro ao atualizar a categoria.");
+    try {
+      console.log("Dados enviados para a API:", categoria);
+
+      if (id !== undefined) {
+        if (!categoria.id) {
+          throw new Error("ID da categoria não definido.");
         }
-      }
-    } else {
-      try {
+
+        await atualizar(
+          `/categorias/${categoria.id}`,
+          categoria,
+          setCategoria,
+          {
+            headers: { Authorization: token },
+          }
+        );
+        alert("Categoria atualizada com sucesso!");
+      } else {
         await cadastrar(`/categorias`, categoria, setCategoria, {
           headers: { Authorization: token },
         });
-        alert("A Categoria foi cadastrada com sucesso!");
-      } catch (error: any) {
-        if (error.toString().includes("403")) {
-          handleLogout();
-        } else {
-          alert("Erro ao cadastrar a Categoria.");
-        }
+        alert("Categoria cadastrada com sucesso!");
+      }
+      retornar();
+    } catch (error: any) {
+      console.error("Erro ao salvar categoria:", error);
+      if (error.toString().includes("403")) {
+        handleLogout();
+      } else {
+        alert(
+          "Erro ao salvar a categoria. Verifique os dados e tente novamente."
+        );
       }
     }
 
     setIsLoading(false);
-    retornar();
   }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#1b1f3e] text-white">
       <button
         onClick={retornar}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg mb-6"
+        className="bg-pink-400 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-lg mb-6"
       >
         Voltar
       </button>
@@ -105,7 +113,7 @@ function FormCategorias() {
         onSubmit={gerarNovaCategoria}
       >
         <div className="flex flex-col gap-2">
-          <label htmlFor="descricao" className="text-lg font-semibold">
+          <label htmlFor="tipo" className="text-lg font-semibold">
             Descrição da Categoria
           </label>
           <input
@@ -113,13 +121,15 @@ function FormCategorias() {
             placeholder="Descreva aqui a categoria do exercício"
             name="tipo"
             className="border-2 border-gray-500 rounded-lg p-3 bg-[#1e2246] text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-            value={categoria.tipo}
+            value={categoria.tipo || ""}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            required
           />
         </div>
         <button
           className="rounded-xl text-white bg-pink-500 hover:bg-pink-700 w-full py-3 flex justify-center font-semibold"
           type="submit"
+          disabled={isLoading}
         >
           {isLoading ? (
             <RotatingLines
