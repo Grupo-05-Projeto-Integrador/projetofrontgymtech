@@ -59,9 +59,9 @@ function ListaExercicios() {
         />
       )}
       <div className="flex justify-center w-full ">
-        <div className="container flex flex-col mx-2">
+        <div className="container flex flex-col items-center py-8">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded self-center mb-4"
+            className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-full self-center mb-4transition-all shadow-lg mb-6 "
             onClick={() => navigate("/cadastrarexercicio")}
           >
             Cadastrar Exercício

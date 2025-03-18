@@ -2,6 +2,7 @@ import Aluno from "./Aluno";
 import Categoria from "./Categoria";
 
 export default interface Exercicio {
+  descanso: string;
   id: number;
   nome: string;
   repeticao: number;
