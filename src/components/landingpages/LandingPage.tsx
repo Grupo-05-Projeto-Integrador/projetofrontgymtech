@@ -4,23 +4,24 @@ import { FaPlay, FaInfoCircle } from "react-icons/fa";
 function PaginaEntrada() {
   return (
     <div className="relative w-screen h-screen overflow-hidden">
-      {/* Vídeo de fundo - Preenche toda a tela */}
-      <div className="absolute inset-0 w-full h-full">
-        <video
-          className="w-full h-full absolute inset-0 object-cover"
-          src="public/img/treinos.mp4"
-          autoPlay
-          loop
-          muted
-        ></video>
-      </div>
+      {/* Vídeo de fundo carregado localmente */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source src="src/assets/imagens/treinos.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeos.
+      </video>
 
-      {/* Sobreposição degradê rosa e azul com maior opacidade */}
+      {/* Sobreposição degradê rosa e azul com opacidade maior */}
       <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-transparent to-blue-700 opacity-60"></div>
 
-      {/* Conteúdo principal dentro de uma caixa com efeito glassmorphism e brilho rosa */}
+      {/* Conteúdo principal */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center p-10">
-        <div className=" bg-opacity-10 backdrop-blur-md p-8 rounded-xl border border-pink-500 shadow-lg shadow-pink-500/50">
+        <div className="bg-opacity-10 backdrop-blur-md p-8 rounded-xl border border-pink-500 shadow-lg shadow-pink-500/50">
           <h1 className="text-5xl font-bold mb-6">Bem-vindo ao GymTech</h1>
           <p className="text-lg mb-6">
             O melhor lugar para transformar sua saúde e bem-estar!
