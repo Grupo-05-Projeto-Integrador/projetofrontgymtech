@@ -1,7 +1,13 @@
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
 
 function Footer() {
+  const { aluno } = useContext(AuthContext);
   let data = new Date().getFullYear();
+
+  // Se o usuário não estiver logado, não renderiza o Footer
+  if (!aluno.token) return null;
 
   return (
     <div className="w-full h-[355px] bg-[#090D28] text-white flex justify-center items-center">

@@ -73,7 +73,7 @@ function Login() {
               </div>
               <button
                 type="submit"
-                className="rounded bg-indigo-400 flex justify-center hover:bg-indigo-900 text-white w-full py-2"
+                className="rounded bg-pink-400 flex justify-center hover:bg-pink-500 text-white w-full py-2"
               >
                 {isLoading ? (
                   <RotatingLines
@@ -90,23 +90,14 @@ function Login() {
               <hr className="border-slate-800 w-full" />
               <p className="text-[#ffffff] text-center">
                 Ainda não tem uma conta?{" "}
-                <Link
-                  to="/cadastro"
-                  className="text-indigo-400 hover:underline"
-                >
+                <Link to="/cadastro" className="text-pink-500 hover:underline">
                   Cadastre-se
                 </Link>
               </p>
             </form>
           </div>
         </div>
-        <div className="fundoLogin hidden lg:block">
-          <img
-            src="images/logo.png"
-            alt="Logo"
-            className="absolute top-30 w-[20%] h-[30%]"
-          />
-        </div>
+        <div className="fundoLogin hidden lg:block"></div>
       </div>
     </>
   );

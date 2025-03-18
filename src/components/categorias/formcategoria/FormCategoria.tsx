@@ -88,7 +88,7 @@ function FormCategorias() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#0e1129] text-white">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#1b1f3e] text-white">
       <button
         onClick={retornar}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg mb-6"

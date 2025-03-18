@@ -21,6 +21,7 @@ import DeletarCategoria from "./components/categorias/deletarcategoria/DeletarCa
 import ListaExercicios from "./components/exercicios/listaexercicios/ListaExercicios";
 import FormExercicio from "./components/exercicios/formexercicio/FormExercicio";
 import DeletarExercicio from "./components/exercicios/deletarexercicio/DeletarExercicio";
+import PaginaEntrada from "./components/landingpages/LandingPage";
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
           <NavBar />
           <div className="min-h-80vh]">
             <Routes>
-              <Route path="/" element={<Login />} />
+              <Route path="/" element={<PaginaEntrada />} />
+
               <Route path="/home" element={<Home />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
